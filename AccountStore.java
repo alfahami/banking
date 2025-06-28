@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class AccountRepository {
+public class AccountStore {
     private ArrayList<Account> datastore = new ArrayList<>();
 
     public Boolean createAccount(Account account) {
