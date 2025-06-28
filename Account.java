@@ -29,7 +29,7 @@ public class Account implements AccountService {
             this.setBalance(this.balance + amount);
         } 
         else {
-            System.out.println("Negative money! You aight!?");
+            throw new RuntimeException("Negative money for real?!");
         }
     }
 
@@ -39,7 +39,7 @@ public class Account implements AccountService {
             this.setBalance(balance - amount);
         } 
         else {
-            System.out.println("Not enough funds!");
+            throw new RuntimeException("Not enough funds!\nTransaction declined!");
         }
     }
 

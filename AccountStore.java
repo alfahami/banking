@@ -19,6 +19,6 @@ public class AccountStore {
         for (Account account : datastore) {
             if(account.getAccountNumber().equals(accountNumber)) return account;
         }
-        return null;
+        throw new RuntimeException("Account not found!");
     }
 }
