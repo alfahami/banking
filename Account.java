@@ -1,6 +1,12 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account implements AccountService {
     private String accountNumber;
     private int balance;
+
+    private List<TransactionLog> transactions = new ArrayList<>();
 
     public Account(String accountNumber, int balance) {
         this.accountNumber = accountNumber;
@@ -27,6 +33,7 @@ public class Account implements AccountService {
     public void deposit(int amount) {
         if(amount >= 0) {
             this.setBalance(this.balance + amount);
+            transactions.add(new TransactionLog(LocalDate.now(), amount, balance, TransactionLog.TxType.DEPOSIT));
         } 
         else {
             throw new RuntimeException("Negative money for real?!");
@@ -37,6 +44,7 @@ public class Account implements AccountService {
     public void withdraw(int amount) {
         if(amount <= balance) {
             this.setBalance(balance - amount);
+            transactions.add(new TransactionLog(LocalDate.now(), amount, balance, TransactionLog.TxType.WITHDRAWAL));
         } 
         else {
             throw new RuntimeException("Not enough funds!\nTransaction declined!");
