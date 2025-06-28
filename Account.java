@@ -25,14 +25,22 @@ public class Account implements AccountService {
 
     @Override
     public void deposit(int amount) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+        if(amount >= 0) {
+            this.setBalance(this.balance + amount);
+        } 
+        else {
+            System.out.println("Negative money! You aight!?");
+        }
     }
 
     @Override
     public void withdraw(int amount) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+        if(amount <= balance) {
+            this.setBalance(balance - amount);
+        } 
+        else {
+            System.out.println("Not enough funds!");
+        }
     }
 
     @Override
