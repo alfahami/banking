@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,10 +60,11 @@ public class Account implements AccountService {
 
     @Override
     public void printStatement() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyy");
         if(!transactions.isEmpty()) {
             System.out.printf("%-12s || %-10s || %-10s || %-10s\n", "Date", "Amount", "Balance", "Tx Type");
             for (TransactionLog tx : transactions) {
-                System.out.printf("%-12s || %-10d || %-10d || %-10s\n", tx.getTxDate(), tx.getTxAmount(), tx.getNewBalance(), tx.getType());
+                System.out.printf("%-12s || %-10d || %-10d || %-10s\n", tx.getTxDate().format(dateTimeFormatter), tx.getTxAmount(), tx.getNewBalance(), tx.getType());
             }
         }
 
