@@ -63,8 +63,8 @@ public class Account implements AccountService {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyy");
         if(!transactions.isEmpty()) {
             System.out.printf("%-12s || %-10s || %-10s || %-10s\n", "Date", "Amount", "Balance", "Tx Type");
-            for (TransactionLog tx : transactions) {
-                System.out.printf("%-12s || %-10d || %-10d || %-10s\n", tx.getTxDate().format(dateTimeFormatter), tx.getTxAmount(), tx.getNewBalance(), tx.getType());
+            for (int i = transactions.size() - 1; i >= 0; i--) {
+                System.out.printf("%-12s || %-10d || %-10d || %-10s\n", transactions.get(i).getTxDate().format(dateTimeFormatter), transactions.get(i).getTxAmount(), transactions.get(i).getNewBalance(), transactions.get(i).getType());
             }
         }
 
