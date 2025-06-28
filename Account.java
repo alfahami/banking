@@ -13,6 +13,12 @@ public class Account implements AccountService {
         this.balance = balance;
     }
 
+    // Copy constructor
+    public Account(Account source) {
+        this.accountNumber = source.accountNumber;
+        this.balance = source.balance;
+    }
+
     public String getAccountNumber() {
         return this.accountNumber;
     }

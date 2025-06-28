@@ -17,7 +17,8 @@ public class AccountStore {
 
     private Account findAcount(String accountNumber) {
         for (Account account : datastore) {
-            if(account.getAccountNumber().equals(accountNumber)) return account;
+            if(account.getAccountNumber().equals(accountNumber)) 
+            return new Account(account); // use of deep copy to protect  return the exact object stored in our ArrayList
         }
         throw new RuntimeException("Account not found!");
     }
