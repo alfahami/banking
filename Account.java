@@ -61,7 +61,7 @@ public class Account implements AccountService {
         }
 
         else {
-            System.out.println("This account doesn't have any transaction yet! Deposit some money gee!");
+            System.out.println("This account doesn't have any transaction yet! Deposit some money Gee! Come on");
         }
     }
 
