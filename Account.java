@@ -44,7 +44,7 @@ public class Account implements AccountService {
     public void withdraw(int amount) {
         if(amount <= balance) {
             this.setBalance(balance - amount);
-            transactions.add(new TransactionLog(LocalDate.now(), amount, balance, TransactionLog.TxType.WITHDRAWAL));
+            transactions.add(new TransactionLog(LocalDate.now(), -amount, balance, TransactionLog.TxType.WITHDRAWAL));
         } 
         else {
             throw new RuntimeException("Not enough funds!\nTransaction declined!");
@@ -53,8 +53,16 @@ public class Account implements AccountService {
 
     @Override
     public void printStatement() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'printStatement'");
+        if(!transactions.isEmpty()) {
+            System.out.printf("%-12s || %-10s || %-10s || %-10s\n", "Date", "Amount", "Balance", "Tx Type");
+            for (TransactionLog tx : transactions) {
+                System.out.printf("%-12s || %-10d || %-10d || %-10s\n", tx.getTxDate(), tx.getTxAmount(), tx.getNewBalance(), tx.getType());
+            }
+        }
+
+        else {
+            System.out.println("This account doesn't have any transaction yet! Deposit some money gee!");
+        }
     }
 
 }
