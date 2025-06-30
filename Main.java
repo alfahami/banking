@@ -12,9 +12,11 @@ public class Main {
 
         accountStore.createAccount(new Account("AAA222", 0));
 
-        account.withdraw(958000); // Trying to withdraw an exceeding amount
-        
-        account.deposit(-1000); // Trying to deposit a negative amount
+        // Trying to withdraw an exceeding amount
+        account.withdraw(958000); 
+
+        // Trying to deposit a negative amount
+        // account.deposit(-1000); 
     }
     
 
