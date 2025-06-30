@@ -7,7 +7,7 @@ A simple banking service built in plain Java.
 
 ## Overview
 
-This is a Java project implementing the core functionalities of a banking system. It includes deposit, withdrawal, and transaction history features, following clean object-oriented design with encapsulated business logic — all without frameworks or external dependencies.
+This is a Java project implementing the core functionalities of a banking system. It includes deposit, withdrawal, and transaction history features, following clean object-oriented design with encapsulated business logic, all without frameworks or external dependencies.
 
 ---
 
@@ -29,7 +29,7 @@ Build a minimal Java application that:
 
 1. **3-Tier Architecture (POJOs / Repository / Presentation)**  
    - Pros: Clean separation of layers.
-   - Cons: Required both an `Account` entity and a separate `AccountService` implementation. Would have required renaming the entity (e.g., `AccountData`) — too much structure for a simple app.
+   - Cons: Required both an `Account` entity and a separate `AccountService` implementation. Would have required renaming the entity (e.g., `AccountData`); too much structure for a simple app.
 
 2. **All-in-One `Account` Class**  
    - Pros: Simple to wire up.
@@ -67,7 +67,21 @@ Build a minimal Java application that:
 No unit tests yet.  
 Possible next steps:
 - Add a `libs/` folder with JUnit jars
-- Write simple `AccountTest` class using either JUnit or a manual test runner
+- Write simple `AccountTest` class using either JUnit or a manual test runner.
+
+Some screenshots of the execution:
+
+1. Successful deposit
+
+![Successful deposit](images/image.png)
+
+2. No Enough funds
+  
+![No Enough funds](images/Screenshot%202025-06-30%20174551.png)
+
+3. Negative money
+  
+![Negative money](images/image3.png)
 
 ---
 
