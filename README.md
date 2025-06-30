@@ -66,11 +66,6 @@ Nice additions! Here’s how you can cleanly incorporate those two points into y
 * **Exception Handling**:
   Runtime errors such as invalid input or insufficient funds are handled using built-in `RuntimeException`, with custom messages to ensure clarity and control during execution.
 
----
-
-If you'd like, I can place this directly into your existing `README.md` in the best spot — likely just after **Features** or as part of a broader "Design Decisions" section. Would you like me to re-integrate it for you?
-
-
 ## Testing
 
 No unit tests yet.  
