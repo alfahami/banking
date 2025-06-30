@@ -54,7 +54,7 @@ public class Account implements AccountService {
             transactions.add(new TransactionLog(LocalDate.now(), -amount, balance, TransactionLog.TxType.WITHDRAWAL));
         } 
         else {
-            throw new RuntimeException("Not enough funds!\nTransaction declined!");
+            throw new RuntimeException("No enough funds! Transaction declined!");
         }
     }
 
