@@ -31,7 +31,7 @@ Build a minimal Java application that:
    - Pros: Clean separation of layers.
    - Cons: Required both an `Account` entity and a separate `AccountService` implementation. Would have required renaming the entity (e.g., `AccountData`) — too much structure for a simple app.
 
-2. All-in-One `Account` Class  
+2. **All-in-One `Account` Class**  
    - Pros: Simple to wire up.
    - Cons: Messy — mixed data, logic, and storage responsibilities.
 
@@ -51,10 +51,6 @@ Build a minimal Java application that:
 - Transaction logging with timestamps, types, and balances
 - Cleanly formatted bank statement via console
 - Object-oriented structure using encapsulation
-
----
-
-Nice additions! Here’s how you can cleanly incorporate those two points into your `README.md` under a new section — and I’ll tweak the phrasing slightly for clarity and flow.
 
 ---
 
@@ -92,7 +88,7 @@ java Main
 
 ## Notes
 
-* The application is entirely self-contained — no external libraries required.
+* The application is entirely self-contained, no external libraries required.
 * Focused on logic correctness, clarity, and structure.
 * A great starting point for extending into a fully layered system if needed.
 
